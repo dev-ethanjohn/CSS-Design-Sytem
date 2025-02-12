@@ -4,10 +4,143 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Design Sytem</title>
+
+    <link rel="stylesheet" href="index.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="bg-dark text-white">
     <div class="container">
       <h1>Design system</h1>
+
+      <!-- <div class="bg-accent text-dark" style="padding: 1rem">
+        light blue bg, with dark text
+      </div>
+
+      <div class="bg-white text-dark" style="padding: 1rem">
+        white bg, with dark texgt
+      </div>
+
+      <div style="padding: 1rem" class="example-component text-white">
+        light blue bg with 20% alpha, with white text
+      </div> -->
+
+      <section id="colors">
+        <h2 class="numbered-title"><span>2</span> colors</h2>
+        <div class="flex">
+          <div style="flex-grow: 1">
+            <div
+              class="bg-dark text-white"
+              style="padding: 3rem 1rem 1rem; border: 1px solid white"
+            >
+              #0B0D17
+            </div>
+            <p><span class="text-accent">RGB</span> 11, 13, 23</p>
+            <p><span class="text-accent">HSL</span> 230, 35%, 7%</p>
+          </div>
+
+          <div style="flex-grow: 1">
+            <div
+              class="bg-accent text-dark"
+              style="padding: 3rem 1rem 1rem; border: 1px solid white"
+            >
+              #0B0D17
+            </div>
+            <p><span class="text-accent">RGB</span> 11, 13, 23</p>
+            <p><span class="text-accent">HSL</span> 230, 35%, 7%</p>
+          </div>
+
+          <div style="flex-grow: 1">
+            <div
+              class="bg-white text-dark"
+              style="padding: 3rem 1rem 1rem; border: 1px solid white"
+            >
+              #ffffff
+            </div>
+            <p><span class="text-accent">RGB</span> 11, 13, 23</p>
+            <p><span class="text-accent">HSL</span> 230, 35%, 7%</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="typography">
+        <h2 class="numbered-title"><span>02</span> typography</h2>
+        <div class="flex">
+          <div class="flex-basis: 100%">
+            <div>
+              <p class="text-accent">Heading 1 - Bellefair Regular - 150px</p>
+              <span class="fs-900 ff-serif uppercase">Earth</span>
+            </div>
+            <div>
+              <p class="text-accent">Heading 2 - Bellefair Regular - 100px</p>
+              <span class="fs-800 ff-serif uppercase">Venus</span>
+            </div>
+            <div>
+              <p class="text-accent">Heading 3 - Bellefair Regular - 56px</p>
+              <span class="fs-700 ff-serif uppercase">Jupiter & Saturn</span>
+            </div>
+            <div>
+              <p class="text-accent">Heading 4 - Bellefair Regular - 32px</p>
+              <span class="fs-600 ff-serif uppercase"
+                >Uranus, Nepture, & Pluto</span
+              >
+            </div>
+            <div>
+              <p class="text-accent">
+                Heading 5 - Barlow Condense Regular - 28px - 4.75 Character
+                Space
+              </p>
+              <span class="fs-500 uppercase ff-sans-cond letter-spacing-1"
+                >So, You Want To Travel to Space</span
+              >
+            </div>
+          </div>
+
+          <div class="flex-basis: 100%">
+            <div>
+              <p class="text-accent ff-serif fs-500">
+                SubHeading 1 - Bellefair Regular - 28px
+              </p>
+              <span>384,400km</span>
+            </div>
+            <div>
+              <p class="text-accent ff-sans-cond letter-spacing-3 fs-200">
+                SubHeading 2 - Barlow Condensed Regular - 14px - 2.35 Character
+                Space
+              </p>
+              <span>Avg.Distance</span>
+            </div>
+            <div>
+              <p class="text-accent ff-sans-cond letter-spacing-2 fs-300">
+                Nav Text - Barlow Condensed Regular - 16px - 2.7 Character Space
+              </p>
+              <span>Europa</span>
+            </div>
+
+            <div>
+              <p>Body Text</p>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Doloremque quis consequatur perferendis repellat enim harum, sit
+                esse, possimus tempora blanditiis ea inventore velit, veritatis
+                vero quos! Explicabo nobis hic itaque Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Hic eligendi culpa aliquid quasi
+                maiores cum reprehenderit excepturi, blanditiis repellendus ab
+                et veniam in cupiditate fugiat perspiciatis repellat provident
+                quaerat at! Lorem ipsum dolor sit, amet consectetur adipisicing
+                elit. Doloribus explicabo labore alias assumenda voluptas?
+                Debitis sint ullam laboriosam commodi tenetur, cupiditate
+                inventore molestiae nam deserunt ut, nisi rerum deleniti nobis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>

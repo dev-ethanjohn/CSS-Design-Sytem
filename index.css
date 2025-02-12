@@ -1,0 +1,104 @@
+/**=======================
+ * RESET
+ * ref: https://www.joshwcomeau.com/css/custom-css-reset/
+ *========================**/
+
+/* BOX SIZING  */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* RESET MARGIN */
+/* ? we could use targetted reset for margin if working on larger codebases */
+* {
+  margin: 0;
+}
+
+/* Body setup */
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+
+  /* improve text rendering on mac */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Images */
+img,
+picture {
+  /* remove margin */
+  display: block;
+  max-width: 100%;
+}
+
+/* Forms */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01m !important;
+    animation-iteration-count: 0.01m !important;
+    transition-duration: 0.01m !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/**=======================
+ * UTILITY CLASSES
+ *========================**/
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 60rem;
+}
+
+/* assistive tech */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.box {
+  background-color: aquamarine;
+  padding: 3rem;
+}

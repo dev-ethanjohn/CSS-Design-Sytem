@@ -184,8 +184,8 @@
             > -->
           </div>
 
-          <div style="margin-bottom: 5rem">
-            <!-- tabs -->
+          <div class="flow" style="margin-bottom: 5rem; --flow-space: 8rem">
+            <!-- NOTE tabs -->
             <div class="tab-list underline-indicators flex">
               <!-- ? use aria for accessibility -->
               <button
@@ -207,7 +207,33 @@
                 Europa
               </button>
             </div>
-            <!-- dots -->
+            <!-- NOTE dots -->
+            <div class="dot-indicators flex">
+              <!-- ? use aria for accessibility -->
+              <button aria-selected="true">
+                <span class="sr-only">Slide title</span>
+              </button>
+              <button aria-selected="false">
+                <span class="sr-only">Slide title</span>
+              </button>
+              <button aria-selected="false">
+                <span class="sr-only">Slide title</span>
+              </button>
+            </div>
+
+            <!-- CIRCLE -->
+            <div class="circle-indicators flex" style="flex-direction: column">
+              <!-- ? use aria for accessibility -->
+              <button aria-selected="true" class="text-white">
+                <span>1</span>
+              </button>
+              <button aria-selected="false" class="text-white">
+                <span>2</span>
+              </button>
+              <button aria-selected="false" class="text-white">
+                <span>3</span>
+              </button>
+            </div>
 
             <!-- numbers -->
           </div>

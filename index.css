@@ -152,6 +152,10 @@ p {
   gap: var(--gap, 1rem);
 }
 
+.d-block {
+  display: block;
+}
+
 /* no added specificity to easily override */
 /* sibling before it */
 .flow > *:where(:not(:first-child)) {
@@ -166,13 +170,21 @@ p {
 }
 
 .grid-container {
-  border: 5px solid green;
+  text-align: center;
+  /* border: 5px solid green; */
   display: grid;
+  place-items: center;
+  padding-inline: 1rem;
+}
+
+.grid-container * {
+  max-width: 50ch;
 }
 
 /* min 720px */
 @media (min-width: 45rem) {
   .grid-container {
+    text-align: left;
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(2em, 1fr) repeat(2, minmax(0, 40em)) minmax(
         2em,
@@ -182,12 +194,17 @@ p {
 
   .grid-container > *:first-child {
     grid-column: 2;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
   }
 
   .grid-container > *:last-child {
     grid-column: 3;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
+  }
+
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
   }
 }
 
@@ -307,6 +324,7 @@ p {
  * ?COMPONENTS
  *========================**/
 .large-button {
+  font-size: 2rem;
   /* change the display for this inline element */
   position: relative;
   display: inline-grid;

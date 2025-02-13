@@ -3,6 +3,7 @@
  *========================**/
 
 :root {
+  /* Values that need to be reused across multiple components (e.g., theme colors, typography sizes). */
   /* colors */
   --clr-dark: 230 35% 7%;
   --clr-light: 231 77% 90%;
@@ -22,6 +23,9 @@
   --ff-serif: "Bellefair", serif;
   --ff-sans-cond: "Barlow Condensed", sans-serif;
   --ff-sans-normal: "Barlow", sans-serif;
+
+  /* spacing */
+  /* --gap: 8rem; */
 }
 
 /**=======================
@@ -41,6 +45,7 @@
 /* ? we could use targetted reset for margin if working on larger codebases */
 * {
   margin: 0;
+  padding: 0;
 }
 
 /* Body setup */
@@ -123,16 +128,16 @@ p {
 }
 
 /* no added specificity to easily override */
-.flow > *:where(:not(:first-child)) {
-  /* sibling before it */
+/* sibling before it */
+/* .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
   outline: 1px solid red;
-}
+} */
 
 .container {
   padding-inline: 2em;
   margin-inline: auto;
-  max-width: 60rem;
+  max-width: 80rem;
 }
 
 /* assistive tech */
@@ -245,4 +250,83 @@ p {
   margin-right: 0.5em;
   font-weight: 700;
   color: hsl(var(--clr-light) / 0.2);
+}
+
+/**=======================
+ * ?COMPONENTS
+ *========================**/
+.large-button {
+  /* change the display for this inline element */
+  position: relative;
+  display: grid;
+  /* vertical + horizontal */
+  place-items: center;
+  padding: 0 2em;
+  aspect-ratio: 1;
+  text-decoration: none;
+  border-radius: 50%;
+  /* z-index: 1; */
+}
+
+.large-button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  background: hsl(var(--clr-light) / 0.15);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: inherit;
+  transition: opacity 500ms linear, transform 500ms ease-in-out;
+}
+
+.large-button:hover::after,
+.large-button:focus::after {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.primary-navigation {
+  /* gap: var(--gap); */
+  --gap: 8rem;
+  /* a custom property declared locally */
+  /* Component-specific values (e.g., spacing, colors unique to one component). */
+  --underline-gap: 2rem;
+  list-style: none;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a > span {
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+
+.underline-indicators > * {
+  /* 1 rem here is just a fallback */
+  padding: var(--underline-gap, 1rem) 0;
+  /* background: red; */
+  border: 0;
+  cursor: pointer;
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+}
+
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+  border-bottom: 0.2rem solid hsl(var(--clr-light) / 0.5); /* Solid underline on hover */
+}
+
+/* .underline-indicators > *:hover  */
+/* ?attibute selector */
+.underline-indicators > .active,
+.underline-indicators [aria-selected="true"] {
+  color: hsl(var(--clr-white));
+  border-bottom: 0.2rem solid hsl(var(--clr-light) / 1);
+}
+
+.tab-list {
+  /* @overrrid */
+  --gap: 2rem;
 }

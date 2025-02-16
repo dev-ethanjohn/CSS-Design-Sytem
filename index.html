@@ -21,6 +21,8 @@
     />
 
     <title>Frontend Mentor | Space tourism website</title>
+
+    <script defer src="./index.js"></script>
   </head>
   <body class="home">
     <!-- 00 Home
@@ -38,7 +40,7 @@
 
   Explore -->
 
-    <header class="primary-header flex" style="justify-content: space-between">
+    <header class="primary-header flex">
       <div>
         <img
           class="logo"
@@ -50,7 +52,9 @@
         <span class="sr-only" aria-expanded="false">Menu</span>
       </button>
       <nav>
+        <!-- ? DATA ATTRIBUTE, it is up to you to come up with your own data  -->
         <ul
+          data-visible="false"
           id="primary-navigation"
           class="primary-navigation underline-indicators flex"
         >

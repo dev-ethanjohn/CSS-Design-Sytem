@@ -357,17 +357,6 @@ p {
   transform: scale(1.2);
 }
 
-.primary-navigation {
-  /* --gap: 8rem; */
-  /* a custom property declared locally */
-  /* Component-specific values (e.g., spacing, colors unique to one component). */
-  --underline-gap: 2rem;
-  list-style: none;
-
-  /* default */
-  background: hsl(var(--clr-dark) / 0.95);
-}
-
 .mobile-nav-toggle {
   display: none;
 }
@@ -380,12 +369,41 @@ p {
   }
 }
 
+/* ? PRIMARY HEADER */
+
+.logo {
+  margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primary-navigation {
+  /* --gap: 8rem; */
+  /* a custom property declared locally */
+  /* Component-specific values (e.g., spacing, colors unique to one component). */
+  --gap: clamp(2rem, 5vw, 4rem);
+  --underline-gap: 2rem;
+  list-style: none;
+
+  /* default */
+  background: hsl(var(--clr-dark) / 0.95);
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a > span {
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+
 /* only for smaller screen sizes */
 @media (max-width: 35em) {
   .primary-navigation {
-    /* --gap: 8rem; */
-    /* a custom property declared locally */
-    /* Component-specific values (e.g., spacing, colors unique to one component). */
     --underline-gap: 1rem;
     list-style: none;
     inset: 0 0 0 30%;
@@ -395,6 +413,11 @@ p {
     z-index: 1000;
 
     transform: translateX(100%);
+    transition: transform 400ms ease-in-out;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translate(0);
   }
 
   .primary-navigation.underline-indicators > .active {
@@ -414,16 +437,27 @@ p {
 
     width: 1.5rem;
     aspect-ratio: 1;
+    transition: all 300ms;
   }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url(./assets/shared/icon-close.svg);
+  }
+
+  /* .mobile-nav-toggle:focus-visible {
+    outline: 5px red;
+    outline-offset: 5px;
+  } */
 }
 
-.primary-navigation a {
-  text-decoration: none;
-}
+@media (min-width: 35em) and (max-width: 45em) {
+  .primary-navigation {
+    padding-inline: 3rem;
+  }
 
-.primary-navigation a > span {
-  font-weight: 700;
-  margin-right: 0.5em;
+  .primary-navigation a > span {
+    display: none;
+  }
 }
 
 .underline-indicators > * {

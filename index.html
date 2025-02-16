@@ -53,6 +53,7 @@
       </button>
       <nav>
         <!-- ? DATA ATTRIBUTE, it is up to you to come up with your own data  -->
+        <!-- aria hidden true, hides it from screen reader -->
         <ul
           data-visible="false"
           id="primary-navigation"
@@ -62,26 +63,26 @@
             <a
               class="ff-sans-cond text-white letter-spacing-2"
               href="index.html"
-              ><span>01</span> Home</a
+              ><span aria-hidden="true">01</span> Home</a
             >
           </li>
           <li>
             <a
               class="ff-sans-cond text-white letter-spacing-2"
               href="destination.html"
-              ><span>02</span> Destination</a
+              ><span aria-hidden="true">02</span> Destination</a
             >
           </li>
           <li>
             <a class="ff-sans-cond text-white letter-spacing-2" href="crew.html"
-              ><span>03</span> Crew</a
+              ><span aria-hidden="true">03</span> Crew</a
             >
           </li>
           <li>
             <a
               class="ff-sans-cond text-white letter-spacing-2"
               href="technology.html"
-              ><span>04</span> Technology</a
+              ><span aria-hidden="true">04</span> Technology</a
             >
           </li>
         </ul>
@@ -90,7 +91,7 @@
       <!--? my ::after is here -->
     </header>
 
-    <div class="grid-container grid-container--home">
+    <main class="grid-container grid-container--home">
       <div>
         <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
           So, you want to travel to
@@ -108,6 +109,6 @@
           >Explore</a
         >
       </div>
-    </div>
+    </main>
   </body>
 </html>
